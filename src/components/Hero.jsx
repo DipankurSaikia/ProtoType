@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoCodeSlash } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 function Hero() {
     return (
@@ -14,9 +15,11 @@ function Hero() {
                     <h4 className='text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo ipsum officia molestias? Aspernatur eos distinctio sit, nesciunt at reiciendis suscipit ad!</h4>
                 </div>
                 <div>
+                    <Link to='/dashboard'>
                     <button className="group bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-all duration-300 flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         Get Started
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -4,9 +4,12 @@ import { IoCodeSlash } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { Menu, X, Code2 } from 'lucide-react';
 import { useState } from 'react';
+import { useAuth } from "../context/AuthContext";
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logout } = useAuth();
+
     return (
         <>
             <header className='header h-20 w-full flex items-center px-6 bg-white/90 backdrop-blur-md border-b border-gray-200'>
@@ -35,8 +38,8 @@ function Header() {
                             Team
                         </NavLink>
                     </div>
-
-                    <div className='signup-login hidden md:flex gap-3'>
+                    
+                    {!user ? <div className='signup-login hidden md:flex gap-3'>
                         <Link to="/login">
                             <button className="text-gray-700 hover:text-blue-600 px-4 py-2 font-medium transition-colors cursor-pointer">
                                 Log in
@@ -47,7 +50,13 @@ function Header() {
                                 Sign Up
                             </button>
                         </Link>
-                    </div>
+                    </div> : <div className='signup-login hidden md:flex gap-3'>
+                        <Link to="/dashboard">
+                            <button className="bg-blue-600 text-white px-6 py-2 rounded-xl font-medium hover:bg-blue-700  cursor-pointer transition-colors">
+                                Go to  Dashboard
+                            </button>
+                        </Link>
+                    </div>}
 
                     {/* Mobile menu button */}
                     <div className="md:hidden">
@@ -85,7 +94,8 @@ function Header() {
                                 Team
                             </NavLink>
                         </div>
-                        <Link to="/signup">
+
+                        {!user? (<><Link to="/signup">
                             <button onClick={() => setIsMenuOpen(false)} className="w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
                                 Sign Up
                             </button>
@@ -94,7 +104,11 @@ function Header() {
                             <button onClick={() => setIsMenuOpen(false)} className="w-full mt-2 text-gray-700 hover:text-blue-600 px-6 py-2 font-medium transition-colors border border-gray-300 rounded-lg hover:border-blue-600">
                                 Login
                             </button>
-                        </Link>
+                        </Link></>):(<Link to="/dashboard">
+                            <button onClick={() => setIsMenuOpen(false)} className="w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                                Dashboard
+                            </button>
+                        </Link>)}
                     </div>
                 </div>
             )}

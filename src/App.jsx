@@ -12,21 +12,37 @@ import About from './components/About'
 import Team from './components/Team'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import { AuthProvider } from './context/AuthContext'
+import PrivateRoute from "./components/PrivateRoute";
+import Dashboard from './pages/Dashboard'
+import DashboardLayout from './DashboardLayout'
+
 function App() {
 
   return (
-   
-    <Router>
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Route>
-    </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Hero />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
+          <Route path='/dashboard' element={<DashboardLayout />}>
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      </Router>
+    </AuthProvider>
   )
 }
 
