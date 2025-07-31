@@ -30,7 +30,7 @@ function Signup() {
                   type='text'
                   name="name"
                   placeholder="Enter your name..."
-                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400"
+                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 w-full"
                   id="nameId"
                 />
               </div>
@@ -49,7 +49,7 @@ function Signup() {
                   type="email"
                   name="email"
                   placeholder="Enter email..."
-                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400"
+                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 w-full"
                   id="emailId"
                 />
               </div>
@@ -68,7 +68,7 @@ function Signup() {
                   type="password"
                   name="password"
                   placeholder="Enter password..."
-                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400"
+                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 w-full"
                   id="passwordId"
                 />
               </div>
@@ -87,7 +87,7 @@ function Signup() {
                   type="password"
                   name="password2"
                   placeholder="Enter password..."
-                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400"
+                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 w-full"
                   id="cpasswordId"
                 />
               </div>

@@ -29,7 +29,7 @@ function Login() {
                   type="email"
                   name="email"
                   placeholder="Enter email..."
-                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400"
+                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 w-full"
                   id="emailId"
                 />
               </div>
@@ -48,7 +48,7 @@ function Login() {
                   type="password"
                   name="password"
                   placeholder="Enter password..."
-                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400"
+                  className="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 w-full"
                   id="passwordId"
                 />
               </div>
